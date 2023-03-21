@@ -1,31 +1,33 @@
 #include <stdio.h>
+
 /**
- * main - prints all numbers of base 16 in lowercase.
+ * main - Prints all possible combinations of two two-digit numbers.
  *
- * Return: 0
-*/
+ * Return: Always 0.
+ */
 int main(void)
 {
-	int i = 0, j = 1;
+	int num1, num2;
 
-	while (i < 100)
+	for (num1 = 0; num1 < 100; num1++)
 	{
-	while (j < 100)
-	{
-		putchar(i / 10 + '0');
-		putchar(i % 10 + '0');
-		putchar(' ');
-		putchar(j / 10 + '0');
-		putchar(j % 10 + '0');
-		if (i != 98 || j != 99)
-	{
-		putchar(',');
-		putchar(' ');
+		for (num2 = num1; num2 < 100; num2++)
+		{
+			if (num1 != num2)
+			{
+				putchar((num1 / 10) + '0');
+				putchar((num1 % 10) + '0');
+				putchar(' ');
+				putchar((num2 / 10) + '0');
+				putchar((num2 % 10) + '0');
+				if (num1 != 98 || num2 != 99)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+		}
 	}
-		j++;
-	}
-		i++;
-		j = i + 1;
-	}
-		return (0);
+	putchar('\n');
+	return (0);
 }
